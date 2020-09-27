@@ -1,0 +1,19 @@
+
+```{r}
+library(htmltab)
+link_democracia= "https://es.wikipedia.org/wiki/%C3%8Dndice_de_democracia"
+path_democracia='//*[@id="mw-content-text"]/div[1]/table[2]'
+datademocracia= htmltab(doc = link_democracia, 
+                which =path_democracia)
+```
+
+```{r}
+datademocracia[,c(1,4,5,6,7,8)]= NULL
+```
+
+```{r}
+str(datademocracia)
+datademocracia$Puntuación=as.numeric(datademocracia$Puntuación)
+
+```
+
